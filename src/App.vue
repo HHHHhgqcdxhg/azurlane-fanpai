@@ -20,7 +20,7 @@
             ></perCard>
         </div>
         <div id="oath">
-            <a href="https://blog.purecucumber.club/blhx-fanpai/" target="_blank">@蔳莼菂䒕黃苽</a><br>仅学习交流使用
+            <a href="https://blog.purecucumber.club/blhx-fanpai/" target="_blank"  rel="noopener">@蔳莼菂䒕黃苽</a><br>仅学习交流使用
         </div>
 
     </div>
