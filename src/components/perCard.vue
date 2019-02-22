@@ -80,10 +80,7 @@
                 }, 220);
             },
             ct: function (e) {
-                log("touch")
-                if(!window.touch){
-                    return
-                }
+                e.preventDefault()
                 if (!this.active) {
                     return
                 }
@@ -99,9 +96,6 @@
                 }
             },
             cm: function (e) {
-                if(window.touch){
-                    return
-                }
                 if (!this.active) {
                     return
                 }
