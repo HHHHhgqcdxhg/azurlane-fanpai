@@ -50,7 +50,7 @@
                 setTimeout(() => {
                     this.trans2Back();
                     setTimeout(() => {this.active = 1},220)
-                }, 1200)
+                }, 1600)
             },
             trans2Back () {
                 if (this.transing) {
