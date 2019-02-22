@@ -19,6 +19,9 @@
                 :turn ="turn"
             ></perCard>
         </div>
+        <div id="oath">
+            <a href="https://blog.purecucumber.club/blhx-fanpai/">@蔳莼菂䒕黃苽</a><br>仅学习交流使用
+        </div>
 
     </div>
 </template>
@@ -176,6 +179,7 @@ export default {
         opacity: 0.6;
         transition-duration: 0.3s;
         top: 0px;
+        font-weight: bold;
     }
     #restartButton:hover{
         opacity: 1;
@@ -195,5 +199,19 @@ export default {
     }
     *{
         -webkit-tap-highlight-color: rgba(0,0,0,0);
+    }
+    #oath{
+        position: absolute;
+        top: 670px;
+
+        font-size: 15px;
+        background-color: rgba(255,255,255,0.66);
+    }
+    a{
+        color: #427cff;
+        text-decoration: none;
+    }
+    a:visited{
+        color: #427cff;
     }
 </style>
