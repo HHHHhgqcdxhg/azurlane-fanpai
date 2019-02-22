@@ -1,9 +1,9 @@
 <template>
-    <div class="perCard" @mousedown="c" :style="`transform:rotateY(${angle})`">
+    <div class="perCard" @touchstart="c" @mousedown="c" :style="`transform:rotateY(${angle})`">
         <!--<img src="../img/card/back.png" alt="">-->
         <!--<img :src="cardSrc" alt="" />-->
         <div class="perCardIn" :style="`background-image:url('${cardSrc}')`">
-            <img v-show="completedCover" src="http://pic.ggemo.com/picgo/blhx-fanpai-match.png" alt="">
+            <img v-show="completedCover" src="https://pic.ggemo.com/picgo/blhx-fanpai-match.png" alt="">
         </div>
     </div>
 </template>
@@ -17,7 +17,7 @@
             return {
                 active: 1,
                 angle: '180deg',
-                cardSrc: 'http://pic.ggemo.com/picgo/fanpai-card-back-trans.png',
+                cardSrc: 'https://pic.ggemo.com/picgo/fanpai-card-back-trans.png',
                 transing: false,
                 completedCover: 0
             };
@@ -27,6 +27,11 @@
             event: 'change'
         },
         created(){
+            if (window.touch){
+                this.c = this.ct
+            }else{
+                this.c = this.cm
+            }
             let y = (this.keyid / 6) >> 0
             let x = this.keyid % 6
             this.show()
@@ -55,7 +60,7 @@
                 this.transing = true
                 this.angle = '90deg';
                 setTimeout(() => {
-                    this.cardSrc = `http://pic.ggemo.com/picgo/fanpai-card-back-trans.png`;
+                    this.cardSrc = `https://pic.ggemo.com/picgo/fanpai-card-back-trans.png`;
                     this.angle = '180deg';
                     this.transing = false
                     this.$emit('change', 0)
@@ -68,13 +73,17 @@
                 this.transing = true
                 this.angle = '90deg';
                 setTimeout(() => {
-                    this.cardSrc = `http://pic.ggemo.com/picgo/fanpai-card-${this.cardid}.png`;
+                    this.cardSrc = `https://pic.ggemo.com/picgo/fanpai-card-${this.cardid}.png`;
                     this.angle = '0deg';
                     this.transing = false
                     this.$emit('change', 1)
                 }, 220);
             },
-            c: function (e) {
+            ct: function (e) {
+                log("touch")
+                if(!window.touch){
+                    return
+                }
                 if (!this.active) {
                     return
                 }
@@ -88,6 +97,27 @@
                     this.trans2Card();
                     this.$emit("fanpaie", this.keyid)
                 }
+            },
+            cm: function (e) {
+                if(window.touch){
+                    return
+                }
+                if (!this.active) {
+                    return
+                }
+                if (this.transing) {
+                    return
+                }
+                if (this.backing) {
+                    return
+                }
+                if (this.angle !== '0deg') {
+                    this.trans2Card();
+                    this.$emit("fanpaie", this.keyid)
+                }
+            },
+            c(){
+                return
             }
         }
     };

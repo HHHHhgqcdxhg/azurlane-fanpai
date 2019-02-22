@@ -3,7 +3,7 @@
         <div id="jishi" class="t">{{gameTimeCount|parseTime}}</div>
         <div id="bestTime" class="t">{{bestTime|parseTime}}</div>
         <div id="restartButton" @click="init">点此<br>重开</div>
-        <img v-for="cardid in 9" :src="`http://pic.ggemo.com/picgo/fanpai-card-${cardid - 1}.png`" :key="`preload${cardid}`" style="opacity: 0.01;margin-top: -1000px;float: left" />
+        <img v-for="cardid in 9" :src="`https://pic.ggemo.com/picgo/fanpai-card-${cardid - 1}.png`" :key="`preload${cardid}`" style="opacity: 0.01;margin-top: -1000px;float: left" />
         <!--<perCard cardid="1" v-model="status[0]"></perCard>-->
         <div id="gameContainer">
             <perCard
@@ -152,7 +152,7 @@ export default {
 #app {
     width: 1280px;
     height: 563px;
-    background-image: url('http://pic.ggemo.com/picgo/blhx-fanpaiyouxi-bg.png');
+    background-image: url('https://pic.ggemo.com/picgo/blhx-fanpaiyouxi-bg.png');
     padding-top: 157px;
 }
     #gameContainer{
@@ -192,5 +192,8 @@ export default {
     }
     #bestTime{
         left:470px
+    }
+    *{
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
     }
 </style>
