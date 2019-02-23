@@ -192,7 +192,7 @@ export default {
         font-size: 22px;
         color: #802f12;
         float: left;
-        top: -34px;
+        top: 36px;
     }
     #jishi{
 
