@@ -154,9 +154,10 @@ export default {
     }
 #app {
     width: 1280px;
-    height: 563px;
+    height: 720px;
     background-image: url('https://pic.ggemo.com/picgo/blhx-fanpaiyouxi-bg.png');
-    padding-top: 157px;
+    background-repeat: no-repeat;
+    padding-top: 87px;
 }
     #gameContainer{
         margin-left: 192px;
@@ -164,7 +165,7 @@ export default {
 
     }
     #restartButton{
-        position: fixed;
+        position: relative;
         width: 70px;
         height: 70px;
         background-color: #739eff;
@@ -178,24 +179,27 @@ export default {
         cursor: pointer;
         opacity: 0.6;
         transition-duration: 0.3s;
-        top: 0px;
+        top: -87px;
         font-weight: bold;
+        left: -168px;
     }
     #restartButton:hover{
         opacity: 1;
     }
     .t{
-        position: absolute;
-        top: 122px;
+        position: relative;
         font-weight: bold;
         font-size: 22px;
         color: #802f12;
+        float: left;
+        top: -34px;
     }
     #jishi{
+
         left:250px
     }
     #bestTime{
-        left:470px
+        left:387px
     }
     *{
         -webkit-tap-highlight-color: rgba(0,0,0,0);
@@ -203,7 +207,6 @@ export default {
     #oath{
         position: absolute;
         top: 670px;
-
         font-size: 15px;
         background-color: rgba(255,255,255,0.66);
     }
@@ -213,5 +216,10 @@ export default {
     }
     a:visited{
         color: #427cff;
+    }
+</style>
+<style scoped>
+    *{
+
     }
 </style>

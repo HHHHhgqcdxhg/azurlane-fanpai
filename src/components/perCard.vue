@@ -131,7 +131,7 @@
         -webkit-user-select: none;
     }
 
-    .perCard > .perCardIn {
+    .perCardIn {
         position: relative;
         width: 100%;
         height: 100%;
